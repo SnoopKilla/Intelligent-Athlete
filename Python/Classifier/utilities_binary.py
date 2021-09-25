@@ -67,29 +67,3 @@ def feature_extractor(signal):
     result.append(rms_cumsum)
 
     return result
-
-
-def features(data):
-    # Creating an empty dataframe with the right column names
-#    feats = ["nPeaks", "nPromPeaks", "nWeakPeaks", "maxAc", "maxPeak", "BP1", "BP2", "BP3", "BP4", "BP5", "BP6", "BP7",
-#             "BP8", "BP9", "BP10", "mean", "std", "variance", "rms", "rms_cumsum", "mean1", "std1", "var1", "rms1",
-#             "mean2", "std2", "var2", "rms2"]
-
-    feats = ["nPeaks", "nPromPeaks", "nWeakPeaks", "maxAc", "maxPeak", "BP1", "BP2", "BP3", "BP4", "BP5", "BP6", "BP7",
-             "BP8", "BP9", "BP10", "mean", "variance", "rms", "rms_cumsum"]
-    names = ["aX_Wrist", "aY_Wrist", "aZ_Wrist", "gX_Wrist", "gY_Wrist", "gZ_Wrist", "aX_Ankle", "aY_Ankle", "aZ_Ankle",
-             "gX_Ankle", "gY_Ankle", "gZ_Ankle"]
-    cols = []
-    for name in names:
-        for feat in feats:
-            cols.append(name + feat)
-    features = pandas.DataFrame(columns=cols)
-
-    # Creating the rows of the dataframe
-    for i in range(len(data.index)):
-        newRow = []
-        for column in data.columns:
-            newRow = newRow + feature_extractor(data[column][i])
-        features.loc[i] = newRow
-
-    return features

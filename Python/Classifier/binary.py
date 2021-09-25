@@ -1,13 +1,12 @@
 from joblib import load
 from syncing import synced
 from windowing import windowing_binary
-from features import features
 from label_corrector import corrector
 
 def classifier(wA,wG,aA,aG):
     # Creating the dataframe with the features associated to the windows
     dataSynced, start = synced(wA, wG, aA, aG)
-    dataWindowed = features(windowing_binary(dataSynced))
+    dataWindowed = windowing_binary(dataSynced)
     bool = load("Models/Binary/Mask.pkl")
     dataWindowed = dataWindowed.loc[:, bool]
 

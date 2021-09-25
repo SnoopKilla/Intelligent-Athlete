@@ -1,0 +1,2 @@
+rootProject.name = "Intelligent Athlete"
+include ':app'

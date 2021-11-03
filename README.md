@@ -19,9 +19,15 @@ The classifier takes as input the data collected by the accelerometer and gyrosc
 2. **Binary Classification**: A binary classifier is used to discriminate between periods of activity and periods of rest.
 3. **Multiclass Classifier**: Given a period of activity, the multiclass classifier labels such period with the correct exercise label.
 
-![image](https://user-images.githubusercontent.com/80259549/139702050-12497fdf-eb18-4187-bc45-47eac200865e.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/80259549/140044672-219e3161-75cc-4742-83b2-076b59213233.png" />
+</p>
 
-**I personally contributed to this project by developing the binary classifier (step 2) and implementing the syncronization logic and the sliding window approach (step 1). Moreover, I also developed an Android app as a result visualization tool (see [Proof of Concept](#proof-of-concept "Goto proof-of-concept"))**
+**I personally contributed to this project by developing the binary classifier (step 2) and implementing the syncronization logic and the sliding window approach (step 1). Moreover, I also developed an Android app as a result visualization tool (see [Proof of Concept](#proof-of-concept "Goto proof-of-concept")). As for the binary classifier, here is an example showing the results achieved (rest in blue and exercise in green).**
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/80259549/140044172-ba3cd913-83d2-4f6a-ae38-1ad2412315cb.png" />
+</p>
 
 ## Technologies
 Project is created with:
